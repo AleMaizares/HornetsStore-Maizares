@@ -1,11 +1,10 @@
 import React from 'react';
 import CartWidget from '../CartWidget';
-//import CartWidget from '../CartWidget';
 import './styles.css';
 
 const NavBar = () => {
   return (
-    <div>
+    <div className='navContainer'>
         <nav className='navMain'>
             <a href="/" className='linkImg'>
                 <img src="hornets.png" className='navImg' alt="logoHornets"></img>

@@ -1,8 +1,10 @@
-.cartWidget{
-    color: white;
-    height: 100%;
-}
-
 .conteinerCart{
     height: 100%;
+    width: 35px;
+}
+
+.conteinerCart svg{
+    color: white;
+    height: 100%;
+    width: 100%;
 }

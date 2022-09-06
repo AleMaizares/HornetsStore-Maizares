@@ -1,0 +1,33 @@
+.countContainer{
+    display: flex;
+    width: 80%;
+    margin: auto;
+    justify-content: space-around;
+    border: 1px solid #35286b;
+    border-radius: 5px;
+    background-color: #fff;
+}
+.countButton{
+    height: 80%;
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+    padding: 2px 6px;
+    margin-top: 4px;
+}
+.countButton svg{
+    color: #2730aa;
+}
+.countCounter{
+    margin-top: 3px;
+}
+.buttonAgregar{
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    font-size: 16px;
+    padding: 5px 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    background-color: #3a2c74;
+}

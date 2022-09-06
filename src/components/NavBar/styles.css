@@ -32,9 +32,8 @@
     margin-top: 6px;
     padding: 7px;
     border-radius: 5px;
-    border: solid 1px #000;
 }
 
 .linkSvg_cart:hover{
-    background-color: #a79bdd;
+    background-color: #6b5ab8;
 }
