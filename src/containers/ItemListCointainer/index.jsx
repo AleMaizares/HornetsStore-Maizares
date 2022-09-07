@@ -1,19 +1,36 @@
 import React from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import { products } from '../../data/products';
 import './styles.css';
-import ItemCount from '../../components/ItemCount';
+import ItemList from '../../components/ItemList';
 
-const ItemListContainer = ({title, price}) => {
-    const agregarAlCarrito = (cantidad) => {
-        console.log(`Se agregó la cantidad ${cantidad} al carrito`);
-    }
-  return (
-    <div className='containerProduct'>
-        <h3 className='titleProduct'>{title}</h3>
-        <img src="camisetahornets.png" alt="camisetaHornets" className='imgProduct'/>
-        <h4 className='priceProduct'>{price}</h4>
-        <ItemCount stock={15} initial={1} onAdd={agregarAlCarrito}/>
+const ItemListContainer = () => {
+
+    const [productos, setProductos] = useState([]);
+
+    useEffect(() => {
+
+        (async() => {
+            const obtenerProductos = new Promise((accept, reject) => {
+                setTimeout(() => {
+                    accept(products)
+                },3000);
+            })
+            try{
+                const response = await obtenerProductos;
+                setProductos(response);
+            } catch (error) {
+                console.log(error);
+            }
+        })()
+
+    },[])
+
+  return(
+    <div className='containerProducts'>
+        <ItemList products={productos}/>
     </div>
   )
 }
-
 export default ItemListContainer;

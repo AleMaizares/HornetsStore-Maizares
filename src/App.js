@@ -6,7 +6,7 @@ function App(){
     <>
         <div className="App">
             <NavBar/>
-            <ItemListContainer title={"Camiseta:"} price={"$1.500"}/>
+            <ItemListContainer/>
         </div>
     </>
   );
