@@ -33,10 +33,6 @@ const ItemCount = ({stock, initial, onAdd}) => {
         setCount(initial);
     }
 
-    /* const agregarAlCarrito = (cantidad) => {
-        console.log(`Se agregó la cantidad ${cantidad} al carrito`);
-    } */
-
   return(
     <>
         <div className='countContainer'>
@@ -48,7 +44,5 @@ const ItemCount = ({stock, initial, onAdd}) => {
     </>
   )
 }
-
-//<ItemCount stock={15} initial={1} onAdd={agregarAlCarrito}/>
 
 export default ItemCount;
