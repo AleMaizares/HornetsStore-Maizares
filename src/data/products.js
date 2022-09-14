@@ -4,7 +4,7 @@ export const products = [
         name: "Camiseta",
         preice: "12.000",
         description: "Camiseta titular de los Charlotte Hornets",
-        imgUrl: "camisetahornets.png",
+        imgUrl: "images/camisetahornets.png",
         stock: 25,
         alt: "Camiseta Hornets"
     },
@@ -13,7 +13,7 @@ export const products = [
         name: "Zapatillas",
         preice: "16.000",
         description: "Zapatillas de los Charlotte Hornets",
-        imgUrl: "zapatillashornets.jpg",
+        imgUrl: "images/zapatillashornets.jpg",
         stock: 18,
         alt: "Zapatillas Hornets"
     },
@@ -22,7 +22,7 @@ export const products = [
         name: "Pantalón",
         preice: "6.000",
         description: "Pantalon titular de los Charlotte Hornets",
-        imgUrl: "pantalonhornets.png",
+        imgUrl: "images/pantalonhornets.png",
         stock: 30,
         alt: "Pantalón Hornets"
     }

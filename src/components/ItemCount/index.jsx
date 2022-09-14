@@ -11,7 +11,6 @@ const ItemCount = ({stock, initial, onAdd}) => {
     const handleAdd = () => {
         if(count < stock){
             setCount(count+1);
-            console.log(count);
         }
         else{
             alert("No hay suficiente stock");
@@ -24,24 +23,23 @@ const ItemCount = ({stock, initial, onAdd}) => {
         }
         else{
             setCount(count-1);
-            console.log(count);
         }
     }
 
     const addCart = () => {
-        onAdd(count);
+        //onAdd(count);
         setCount(initial);
     }
 
   return(
-    <>
-        <div className='countContainer'>
+    <div className='countContainer'>
+        <div className='countButtons'>
             <button className=' countButton' onClick={handleLess}><AiOutlineMinus/></button>
             <p className='countCounter'>{count}</p>
             <button className=' countButton' onClick={handleAdd}><AiOutlinePlus/></button>
         </div>
-        <button className='buttonAgregar' onClick={addCart}>Agregar</button>
-    </>
+        <button className='buttonAgregar' onClick={addCart}>Agregar al Carrito</button>
+    </div>
   )
 }
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import ItemDetail from '../../components/ItemDetail';
+import './styles.css';
 
 const ItemDetailContainer = () => {
 
@@ -11,7 +12,7 @@ const ItemDetailContainer = () => {
         const getProducts = async() => {
 
             try {
-                const response = await fetch("https://fakestoreapi.com/products/3");
+                const response = await fetch("https://fakestoreapi.com/products/1");
                 const data = await response.json();
                 setProductDetail(data);
             }catch(error){
@@ -24,7 +25,9 @@ const ItemDetailContainer = () => {
     },[])
 
   return(
-    <ItemDetail product={productDetail}/>
+    <div className='ItemDetailContainer'>
+        <ItemDetail product={productDetail}/>
+    </div>
   )
 }
 
