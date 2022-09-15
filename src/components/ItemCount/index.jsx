@@ -29,6 +29,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
     const addCart = () => {
         //onAdd(count);
         setCount(initial);
+        console.log("Agregado al carrito!");
     }
 
   return(

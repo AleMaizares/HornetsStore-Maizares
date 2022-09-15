@@ -17,6 +17,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    gap: 10px;
 }
 .detail-info p, .detail-info h1{
     text-align: center;
