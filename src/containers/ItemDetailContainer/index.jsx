@@ -2,7 +2,6 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import ItemDetail from '../../components/ItemDetail';
 import './styles.css';
-import { products } from '../../data/products';
 import { useParams } from 'react-router-dom';
 
 const ItemDetailContainer = () => {
@@ -17,8 +16,10 @@ const ItemDetailContainer = () => {
         const getProducts = async() => {
 
             try {
-                const response = products.find(product=>product.id===productId);
-                setProductDetail(response);
+                const response = await fetch('/mocks/products.json');
+                const products = await response.json();
+                const productoselejidos = products.filter(producto => producto.id === productId);
+                setProductDetail(productoselejidos);
             }catch(error){
                 alert(error);
             }
@@ -37,17 +38,3 @@ const ItemDetailContainer = () => {
 }
 
 export default ItemDetailContainer;
-
-//const response = products.find(product => product.id === product);
-
-/* const getProducts = async() => {
-
-    try {
-        const response = await fetch("https://fakestoreapi.com/products/1");
-        const data = await response.json();
-        setProductDetail(data);
-    }catch(error){
-        alert(error);
-    }
-
-} */

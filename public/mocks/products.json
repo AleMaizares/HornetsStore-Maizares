@@ -1,42 +1,82 @@
 [
     {
         "id":"1",
-        "name": "Camiseta",
+        "name": "Jersey Holder",
         "price": "12.000",
         "description": "Camiseta titular de los Charlotte Hornets",
-        "imgUrl": "../images/camisetahornets.png",
+        "imgUrl": "../images/camisetahornets.jpg",
         "stock": "25",
-        "alt": "Camiseta Hornets",
+        "alt": "Camiseta-Hornets",
         "category": "camisetas"
     },
     {
         "id":"2",
-        "name": "Zapatillas",
-        "price": "16.000",
-        "description": "Zapatillas de los Charlotte Hornets",
-        "imgUrl": "../images/zapatillashornets.jpg",
+        "name": "Purle Sneakers",
+        "price": "26.000",
+        "description": "Zapatillas moradas de los Charlotte Hornets",
+        "imgUrl": "../images/zapatillasjordanhornets.jpg",
         "stock": "18",
-        "alt": "Zapatillas Hornets",
+        "alt": "Zapatillas-Hornets",
         "category": "zapatillas"
     },
     {
         "id":"3",
-        "name": "Pantalón",
-        "price": "6.000",
+        "name": "Shorts Holder",
+        "price": "8.000",
         "description": "Pantalon titular de los Charlotte Hornets",
-        "imgUrl": "../images/pantalonhornets.png",
+        "imgUrl": "../images/pantalonhornets.jpg",
         "stock": "32",
-        "alt": "Pantalón Hornets",
+        "alt": "Pantalón-Hornets",
         "category": "pantalones"
     },
     {
         "id":"4",
-        "name": "Gorra",
+        "name": "Light-blue Cap",
         "price": "3.000",
         "description": "Gorra de los Charlotte Hornets",
         "imgUrl": "../images/gorrahornets.jpg",
         "stock": "45",
-        "alt": "Pantalón Hornets",
+        "alt": "Gorra-Hornets",
         "category": "gorras"
+    },
+    {
+        "id":"5",
+        "name": "Short Degrade",
+        "price": "10.000",
+        "description": "Pantalon degrade de los Charlotte Hornets",
+        "imgUrl": "../images/pantalondegradehornets.jpg",
+        "stock": "45",
+        "alt": "Pantalóndegrade-Hornets",
+        "category": "pantalones"
+    },
+    {
+        "id":"6",
+        "name": "Jersey Degrade",
+        "price": "15.000",
+        "description": "Camiseta degrade de los Charlotte Hornets",
+        "imgUrl": "../images/camisetadegradehornets.jpg",
+        "stock": "25",
+        "alt": "Camisetadegrade-Hornets",
+        "category": "camisetas"
+    },
+    {
+        "id":"7",
+        "name": "Purle Cap",
+        "price": "3.500",
+        "description": "Gorra morada de los Charlotte Hornets",
+        "imgUrl": "../images/gorramoradahornets.jpg",
+        "stock": "45",
+        "alt": "Gorramorada-Hornets",
+        "category": "gorras"
+    },
+    {
+        "id":"8",
+        "name": "White Sneakers",
+        "price": "18.000",
+        "description": "Zapatillas blancas de los Charlotte Hornets",
+        "imgUrl": "../images/zapatillasnikehornets.jpg",
+        "stock": "18",
+        "alt": "Zapatillasblancas-Hornets",
+        "category": "zapatillas"
     }
 ]

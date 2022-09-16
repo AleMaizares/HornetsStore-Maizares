@@ -20,7 +20,8 @@ const ItemListContainer = () => {
                 if(categoryId){
                     const response = await fetch('/mocks/products.json');
                     const productos = await response.json();
-                    setProductos(productos);
+                    const productosFIltrados = productos.filter(producto => producto.category === categoryId);
+                    setProductos(productosFIltrados);
                 }
                 else{
                     const response = await fetch('/mocks/products.json');
