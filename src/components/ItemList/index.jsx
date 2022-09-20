@@ -3,13 +3,28 @@ import Item from '../Item';
 import './styles.css';
 
 const ItemList = ({products}) => {
-  return(
-    <div className='Products'>
-        {products.map(product => {
-            return <Item key={product.id} product={product}/>
-        })}
-    </div>
-  )
+    return(
+        <div className='Products'>
+            {products.length ? products.map(product => {
+                return <Item key={product.id} product={product}/>
+            })
+            :
+            <h2>Loading...</h2>
+            }
+        </div>
+    )
 }
 
 export default ItemList;
+
+
+
+/*   const ItemList = ({products}) => {
+    return(
+      <div className='Products'>
+          {products.map(product => {
+              return <Item key={product.id} product={product}/>
+          })}
+      </div>
+    )
+  } */

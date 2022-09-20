@@ -3,7 +3,10 @@ import './styles.css';
 
 const NotFound = () => {
   return (
-    <h2 className='pageError'>Page not Found !</h2>
+    <div className='pageError'>
+        <img src="/images/error404.jpg" alt="error-404"/>
+        <h2>Oops... page not Found !</h2>
+    </div>
   )
 }
 

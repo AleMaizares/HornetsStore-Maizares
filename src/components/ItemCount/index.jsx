@@ -13,7 +13,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
             setCount(count+1);
         }
         else{
-            alert("No hay suficiente stock");
+            alert("Sin stock suficiente");
         }
     }
 
@@ -27,7 +27,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
     }
 
     const addCart = () => {
-        //onAdd(count);
+        onAdd(count);
         setCount(initial);
         console.log("Agregado al carrito!");
     }

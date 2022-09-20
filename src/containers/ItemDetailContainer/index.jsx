@@ -13,19 +13,18 @@ const ItemDetailContainer = () => {
 
     useEffect(()=>{
 
-        const getProducts = async() => {
+        (async() => {
 
             try {
                 const response = await fetch('/mocks/products.json');
                 const products = await response.json();
-                const productoselejidos = products.filter(producto => producto.id === productId);
-                setProductDetail(productoselejidos);
+                const productoElejido = products.find(producto => producto.id === productId);
+                setProductDetail(productoElejido);
             }catch(error){
                 alert(error);
             }
 
-        }
-        getProducts();
+        })();
 
     },[productId])
     console.log(productDetail);
