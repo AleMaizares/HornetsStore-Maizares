@@ -4,7 +4,7 @@ import './styles.css';
 const Cart = () => {
   return (
     <div className='cart'>
-        <h2>Carritooo</h2>
+        <h2>carrito</h2>
     </div>
   )
 }
