@@ -16,15 +16,3 @@ const ItemList = ({products}) => {
 }
 
 export default ItemList;
-
-
-
-/*   const ItemList = ({products}) => {
-    return(
-      <div className='Products'>
-          {products.map(product => {
-              return <Item key={product.id} product={product}/>
-          })}
-      </div>
-    )
-  } */

@@ -32,20 +32,22 @@ const ShopProvider = ({children}) => {
         return cart.some(product => product.id === id)
     }
 
-    const removeItem = (id) => {
-        const eliminarItem = cart.filter((product) => product.id !== id)
-        setCart(eliminarItem);
+    const removeItem = (itemToRemove) => {
+        const deleteItem = cart.filter(product => product !== itemToRemove)
+        setCart(deleteItem);
     }
-    console.log(removeItem);
 
     const clearCart = () => {
-        const limpiarCart = cart.splice()
-        setCart(limpiarCart);
+        setCart([]);
     }
-    console.log(clearCart);
+
+    const total = () => {
+        const total = cart.reduce((acc, producto) => acc += producto.quantity * producto.price, 0)
+        return total;
+    }
 
   return (
-    <Shop.Provider value={{cart, addItem}}>
+    <Shop.Provider value={{cart, addItem, removeItem, clearCart, total}}>
         {children}
     </Shop.Provider>
   )

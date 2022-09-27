@@ -1,12 +1,14 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-//import { products } from '../../data/products';
 import './styles.css';
 import ItemList from '../../components/ItemList';
 import { useParams } from 'react-router-dom';
+//import { db } from '../../firebase/config';
 
 const ItemListContainer = () => {
+
+    //console.log(db);
 
     const [productos, setProductos] = useState([]);
 
