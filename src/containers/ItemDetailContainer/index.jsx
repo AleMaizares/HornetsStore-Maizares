@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import ItemDetail from '../../components/ItemDetail';
 import './styles.css';
 import { useParams } from 'react-router-dom';
+import { doc, getDoc } from "firebase/firestore";
+import { db } from '../../firebase/config';
 
 const ItemDetailContainer = () => {
 
@@ -16,10 +18,14 @@ const ItemDetailContainer = () => {
         (async() => {
 
             try {
-                const response = await fetch('/mocks/products.json');
-                const products = await response.json();
-                const productoElejido = products.find(producto => producto.id === productId);
-                setProductDetail(productoElejido);
+                const docRef = doc(db, "Products", productId);
+                const docSnap = await getDoc(docRef);
+                if (docSnap.exists()) {
+                    console.log("Document data:", docSnap.data());
+                    setProductDetail({id: docSnap.id, ...docSnap.data()})
+                } else {
+                    console.log("No such document!");
+                }
             }catch(error){
                 alert(error);
             }
@@ -37,3 +43,8 @@ const ItemDetailContainer = () => {
 }
 
 export default ItemDetailContainer;
+
+/* const response = await fetch('/mocks/products.json');
+const products = await response.json();
+const productoElejido = products.find(producto => producto.id === productId);
+setProductDetail(productoElejido); */

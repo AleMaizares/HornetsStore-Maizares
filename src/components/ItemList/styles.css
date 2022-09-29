@@ -4,3 +4,14 @@
     justify-content: center;
     gap: 25px;
 }
+.loadingDiv{
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.loadingDiv h2 {
+    color: #4e3f96;
+}

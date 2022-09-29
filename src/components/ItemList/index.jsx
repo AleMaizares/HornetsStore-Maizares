@@ -1,6 +1,7 @@
 import React from 'react';
 import Item from '../Item';
 import './styles.css';
+import {PulseLoader} from 'react-spinners';
 
 const ItemList = ({products}) => {
     return(
@@ -9,7 +10,10 @@ const ItemList = ({products}) => {
                 return <Item key={product.id} product={product}/>
             })
             :
-            <h2>Loading...</h2>
+            <div className='loadingDiv'>
+                <PulseLoader color={'#4e3f96'} size={40}/>
+                <h2>Loading...</h2>
+            </div>
             }
         </div>
     )
