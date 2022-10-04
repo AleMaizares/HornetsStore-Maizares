@@ -32,8 +32,8 @@ const ItemCount = ({stock, initial, onAdd}) => {
         console.log("Agregado al carrito!");
     }
 
-  return(
-    <div className='countContainer'>
+    return(
+        <div className='countContainer'>
         <div className='countButtons'>
             <button className=' countButton' onClick={handleLess}><AiOutlineMinus/></button>
             <p className='countCounter'>{count}</p>

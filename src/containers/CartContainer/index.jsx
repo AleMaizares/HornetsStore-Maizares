@@ -1,18 +1,47 @@
-import React from 'react';
-import { Shop } from '../../context/ShopProvider';
-import './styles.css';
-import { useContext } from 'react';
+//React
+import {React, useState, useContext} from 'react';
 import {Link} from 'react-router-dom';
+//Components
+import {Shop} from '../../context/ShopProvider';
+import ordenGenerada from '../../services/generarOrden';
+//Firestore
+import {collection, doc, addDoc, updateDoc, getDoc} from "firebase/firestore";
+import {db} from "../../firebase/config";
+//Icons-react
 import { BsFillArrowLeftCircleFill } from 'react-icons/bs';
 import { AiOutlineCheck,AiOutlineClose } from "react-icons/ai";
 import { GiBroom } from "react-icons/gi";
-
+//Styles and Library
+import {BarLoader} from 'react-spinners';
+import './styles.css';
 
 const Cart = () => {
     const {cart, removeItem, clearCart, total} = useContext(Shop);
-    console.log(cart);
-    const importeTotal = total();
-    console.log(importeTotal);
+
+    const [loading, setLoading] = useState(false);
+
+    const handleBuy = async() => {
+        setLoading(true);
+        const importeTotal = total();
+
+        const orden = ordenGenerada("Alejandro", "propotpvpgamer@gmail.com", 3876009994, cart, importeTotal);
+        console.log(orden);
+        const docRef = await addDoc(collection(db, "orders"), orden);
+
+        cart.forEach(async(productoEnCarrito)=>{
+            const productRef = doc(db, "Products", productoEnCarrito.id);
+
+            const productSnap = await getDoc(productRef);
+
+            await updateDoc(productRef, {
+                stock: productSnap.data().stock - productoEnCarrito.quantity
+            });
+        })
+        setLoading(false);
+        alert("Gracias por su compra! Se generó la orden con ID: " + docRef.id);
+        clearCart();
+    };
+
     return (
         <div className='contains'>
             <table>
@@ -32,7 +61,7 @@ const Cart = () => {
                                 <th><img width="70px" src={item.imgUrl} alt={item.alt}/></th>
                                 <th>{item.name}</th>
                                 <th>{item.quantity}</th>
-                                <th>${item.price}</th>
+                                <th>${item.price * item.quantity}</th>
                                 <th>
                                     <button className='deleteProduct' onClick={()=>removeItem(item)}><AiOutlineClose/>Eliminar</button>
                                 </th>
@@ -62,8 +91,14 @@ const Cart = () => {
             </table>
             <div className='total'>
                 <h2>Total:</h2>
-                <p>${importeTotal}</p>
-                <button className='finishBuying'>Finalizar Compra<AiOutlineCheck/></button>
+                <p>${total()}</p>
+                {loading ? (
+                    <div>
+                        <BarLoader color={'#4e3f96'}/>
+                    </div>
+                ) : (
+                <button className='finishBuying' onClick={handleBuy}>Finalizar Compra<AiOutlineCheck/></button>
+                )}
             </div>
         </div>
     )

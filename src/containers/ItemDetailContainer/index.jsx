@@ -43,8 +43,3 @@ const ItemDetailContainer = () => {
 }
 
 export default ItemDetailContainer;
-
-/* const response = await fetch('/mocks/products.json');
-const products = await response.json();
-const productoElejido = products.find(producto => producto.id === productId);
-setProductDetail(productoElejido); */

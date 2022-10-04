@@ -31,12 +31,18 @@ const ItemDetail = ({product}) => {
             <div className='detail-info'>
                 <h1>{product.name}</h1>
                 <p>{product.description}</p>
-                <h3>${product.price}</h3>
-                <span>({product.stock} disponibles)</span>
                 {!qty ? (
-                    <ItemCount stock={product.stock} initial={1} onAdd={addCart}/>
+                    <div className='detailSelection'>
+                        <h3>${product.price}</h3>
+                        <span>({product.stock} disponibles)</span>
+                        <ItemCount stock={product.stock} initial={1} onAdd={addCart}/>
+                    </div>
                 ) : (
-                    <button className='finalizarCompra' onClick={handleFinish}>Finalizar Compra</button>
+                    <div className='detailContinue'>
+                        <h3>Total:</h3>
+                        <p>${product.price * qty}</p>
+                        <button className='finalizarCompra' onClick={handleFinish}>Finalizar Compra</button>
+                    </div>
                 )}
             </div>
         </div>
