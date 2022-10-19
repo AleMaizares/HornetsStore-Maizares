@@ -27,16 +27,15 @@ const ItemListContainer = () => {
                     querySnapshot.forEach((doc) => {
                         productosFirebase.push({id: doc.id, ...doc.data()})
                     });
-                    console.log(productosFirebase);
                     setProductos(productosFirebase);
             } catch (error) {
-                console.log(error);
             }
         })()
     },[categoryId])
 
   return(
     <div className='containerProducts'>
+        <h2 className='categoryTitle'>{categoryId}</h2>
         <ItemList products={productos}/>
     </div>
   )

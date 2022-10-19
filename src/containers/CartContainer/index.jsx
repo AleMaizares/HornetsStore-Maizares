@@ -8,10 +8,10 @@ import ordenGenerada from '../../services/generarOrden';
 import {collection, doc, addDoc, updateDoc, getDoc} from "firebase/firestore";
 import {db} from "../../firebase/config";
 //Icons-react
-import { BsFillArrowLeftCircleFill } from 'react-icons/bs';
-import { AiOutlineCheck,AiOutlineClose } from "react-icons/ai";
-import { GiBroom } from "react-icons/gi";
-//Styles and Library
+import {BsFillArrowLeftCircleFill} from 'react-icons/bs';
+import {AiOutlineCheck,AiOutlineClose} from "react-icons/ai";
+import {GiBroom} from "react-icons/gi";
+//Library and Styles
 import {BarLoader} from 'react-spinners';
 import './styles.css';
 
@@ -24,8 +24,7 @@ const Cart = () => {
         setLoading(true);
         const importeTotal = total();
 
-        const orden = ordenGenerada("Alejandro", "propotpvpgamer@gmail.com", 3876009994, cart, importeTotal);
-        console.log(orden);
+        const orden = ordenGenerada("Alejandro", "alejandromaizares@gmail.com", 3875123456, cart, importeTotal);
         const docRef = await addDoc(collection(db, "orders"), orden);
 
         cart.forEach(async(productoEnCarrito)=>{
@@ -105,3 +104,5 @@ const Cart = () => {
 }
 
 export default Cart;
+
+/*<button onClick={Modal} className='finishBuying'>Ir al Checkout<BsFillArrowRightCircleFill/></button>*/

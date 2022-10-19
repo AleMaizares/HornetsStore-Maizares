@@ -3,6 +3,7 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 25px;
+    margin-top: 45px;
 }
 .loadingDiv{
     height: 60vh;
@@ -13,5 +14,5 @@
     gap: 10px;
 }
 .loadingDiv h2 {
-    color: #4e3f96;
+    color: #fff;
 }

@@ -19,7 +19,6 @@ const ItemCount = ({stock, initial, onAdd}) => {
 
     const handleLess = () => {
         if(count===initial){
-            console.log("Stock mínimo");
         }
         else{
             setCount(count-1);
@@ -29,7 +28,6 @@ const ItemCount = ({stock, initial, onAdd}) => {
     const addCart = () => {
         onAdd(count);
         setCount(initial);
-        console.log("Agregado al carrito!");
     }
 
     return(
@@ -39,7 +37,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
             <p className='countCounter'>{count}</p>
             <button className=' countButton' onClick={handleAdd}><AiOutlinePlus/></button>
         </div>
-        <button className='buttonAgregar' onClick={addCart}>Agregar al Carrito</button>
+        <button className='buttonAgregar' onClick={addCart}>Continuar</button>
     </div>
   )
 }

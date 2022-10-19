@@ -11,7 +11,6 @@ const ShopProvider = ({children}) => {
     const addItem = (item) => {
 
         const productoRepetido = isInCart(item.id);
-        console.log(productoRepetido);
 
         if (productoRepetido) {
             const cartModified = cart.map(product => {
@@ -45,6 +44,8 @@ const ShopProvider = ({children}) => {
         const total = cart.reduce((acc, producto) => acc += producto.quantity * producto.price, 0)
         return total;
     }
+
+    
 
   return (
     <Shop.Provider value={{cart, addItem, removeItem, clearCart, total}}>

@@ -1,0 +1,12 @@
+.containerTitles{
+    text-align: center;
+    margin: 25px 0px 10px 0px;
+}
+.mainTitle{
+    color: #000;
+    font-size: 50px;
+}
+.secondTitle{
+    color: #000;
+    font-size: 30px;
+}

@@ -11,7 +11,6 @@ const ItemDetailContainer = () => {
     const [productDetail, setProductDetail] = useState({})
 
     const {productId} = useParams();
-    console.log(productId);
 
     useEffect(()=>{
 
@@ -21,10 +20,8 @@ const ItemDetailContainer = () => {
                 const docRef = doc(db, "Products", productId);
                 const docSnap = await getDoc(docRef);
                 if (docSnap.exists()) {
-                    console.log("Document data:", docSnap.data());
                     setProductDetail({id: docSnap.id, ...docSnap.data()})
                 } else {
-                    console.log("No such document!");
                 }
             }catch(error){
                 alert(error);
@@ -33,10 +30,10 @@ const ItemDetailContainer = () => {
         })();
 
     },[productId])
-    console.log(productDetail);
 
   return(
     <div className='ItemDetailContainer'>
+        <h3 className='Detail'>Detail:</h3>
         <ItemDetail product={productDetail}/>
     </div>
   )

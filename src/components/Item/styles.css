@@ -4,14 +4,14 @@
     flex-direction: column;
     align-items: center;
     gap: 12px;
-    background-color: #8479b9;
+    background-color: #fff;
     border-radius: 5px;
     height: auto;
 }
 .titleProduct{
     margin-top: 10px;
     font-size: 25px;
-    color: #fff;
+    color: #2f2853;
 }
 .imgProduct{
     width: 85%;
@@ -19,7 +19,7 @@
 }
 .priceProduct{
     font-size: 20px;
-    color: #fff;
+    color: #2f2853;
 }
 .buttonProduct{
     padding: 5px 10px;

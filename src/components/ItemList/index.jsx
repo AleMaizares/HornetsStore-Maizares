@@ -11,7 +11,7 @@ const ItemList = ({products}) => {
             })
             :
             <div className='loadingDiv'>
-                <PulseLoader color={'#4e3f96'} size={40}/>
+                <PulseLoader color={'#fff'} size={40}/>
                 <h2>Loading...</h2>
             </div>
             }

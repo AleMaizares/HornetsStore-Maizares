@@ -17,8 +17,6 @@ const ItemDetail = ({product}) => {
         setQty(quantity);
     }
 
-    console.log(qty);
-
     const handleFinish = () => {
         const productToSave = {...product, quantity: qty}
         addItem(productToSave)
@@ -41,7 +39,7 @@ const ItemDetail = ({product}) => {
                     <div className='detailContinue'>
                         <h3>Total:</h3>
                         <p>${product.price * qty}</p>
-                        <button className='finalizarCompra' onClick={handleFinish}>Finalizar Compra</button>
+                        <button className='agregarAlCarrito' onClick={handleFinish}>Agregar al Carrito</button>
                     </div>
                 )}
             </div>

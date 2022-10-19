@@ -1,3 +1,8 @@
 .ItemDetailContainer{
     width: 100%;
 }
+.Detail {
+    text-align: center;
+    font-size: 35px;
+    margin-top: 25px;
+}
